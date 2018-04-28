@@ -6,13 +6,13 @@ public class AssignStaffUI {
 	AssignStaffControl staffControl=new AssignStaffControl();
 	
 
-	public void startInterface() {
-		staffControl.getCampaignControl();
+	public void startInterface(int selectedClients) {
+		staffControl.getCampaignControl(selectedClients);
 		
 		
 	}
-	public void selectCampaignUI(int selectCampaign) {
-	staffControl.selectCampaignControl(selectCampaign);
+	public void selectCampaignUI(int selectedClients,int selectCampaign) {
+	staffControl.selectCampaignControl(selectedClients,selectCampaign);
 	}
 	
 	public void assignStaffToCampaignUI() {

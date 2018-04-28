@@ -11,16 +11,16 @@ public class Database {
 	
 	public Database() {
 		clientAppcent =new Client(1,"Appcent","AcÄ±badem","appcent@appcent.mobi","Arda Altunyay","arda.altunyay@appcent.mobi");
-		Campaign campaignAppcent=new Campaign(1,"Appcent Mobile Advert","12/04/2016","12/05/2016",345.5);
+		Campaign campaignAppcent=new Campaign(1,1,"Appcent Mobile Advert","12/04/2016","12/05/2016",345.5);
 		clientAppcent.addNewCampaigns(campaignAppcent);
-		Campaign campaignAppcentIOS=new Campaign(1,"Appcent Mobile IOS","13/06/2018","17/08/2018",360.5);
+		Campaign campaignAppcentIOS=new Campaign(2,1,"Appcent Mobile IOS","13/06/2018","17/08/2018",360.5);
 		clientAppcent.addNewCampaigns(campaignAppcentIOS);
 		dataClient.add(clientAppcent);
 		
 		clientVizyoneks=new Client(2,"Vizyoneks","Ataşehir","vizyoneks@gmail.com","Hasan Arınç","hasanarinc@gmail.com");
-		Campaign campaignVizyoneks10=new Campaign(2,"Vizyoneks 10. YIL JAVA","12/04/2016","12/05/2016",345.5);
+		Campaign campaignVizyoneks10=new Campaign(1,2,"Vizyoneks 10. YIL JAVA","12/04/2016","12/05/2016",345.5);
 		clientVizyoneks.addNewCampaigns(campaignVizyoneks10);
-		Campaign campaignVizyoneks20=new Campaign(2,"Vizyoneks 20. YIL JAVA","13/06/2018","17/08/2018",360.5);
+		Campaign campaignVizyoneks20=new Campaign(2,2,"Vizyoneks 20. YIL JAVA","13/06/2018","17/08/2018",360.5);
 		clientVizyoneks.addNewCampaigns(campaignVizyoneks20);
 		dataClient.add(clientVizyoneks);
 		
@@ -32,10 +32,10 @@ public class Database {
 
 	}
 	public  Database(String campaign) {
-		dataCampaign.add(new Campaign(1,"1. Yellow Friday","01/01/2018","01/06/2018",128.50));
-		dataCampaign.add(new Campaign(2,"2. Black Friday","20/10/2018","24/10/2018",85.0));
-		dataCampaign.add(new Campaign(3,"3. New Year","30/12/2017","01/01/2018",100.0));
-		dataCampaign.add(new Campaign(4,"4. Valentine's Day","14/02/2018","15/02/2018",15.75));
+		dataCampaign.add(new Campaign(1,1,"1. Yellow Friday","01/01/2018","01/06/2018",128.50));
+		dataCampaign.add(new Campaign(2,2,"2. Black Friday","20/10/2018","24/10/2018",85.0));
+		dataCampaign.add(new Campaign(3,3,"3. New Year","30/12/2017","01/01/2018",100.0));
+		dataCampaign.add(new Campaign(4,4,"4. Valentine's Day","14/02/2018","15/02/2018",15.75));
 	}
 
 	public ArrayList<Client> getList() {

@@ -22,13 +22,25 @@ public Campaign() {
 }
 
 
-public Campaign(int clientID,String title, String campaignStartDate, String campaignFinishDate, double estimatedCost) {
+public Campaign(int campaignID,int clientID,String title, String campaignStartDate, String campaignFinishDate, double estimatedCost) {
 	super();
+	
+	this.campaignID=campaignID;
 	this.clientID=clientID;
 	this.title = title;
 	this.campaignStartDate = campaignStartDate;
 	this.campaignFinishDate = campaignFinishDate;
 	this.estimatedCost = estimatedCost;
+}
+
+
+public int getCampaignID() {
+	return campaignID;
+}
+
+
+public void setCampaignID(int campaignID) {
+	this.campaignID = campaignID;
 }
 
 
@@ -99,7 +111,7 @@ public Campaign createCampaign(int selectedClient) {
 	System.out.print("Estimated Cost..:");
 	estimatedCost=scan.nextDouble();
 	setEstimatedCost(estimatedCost);
-	Campaign campaigns=new Campaign(selectedClient,campaignTitle,campaignStartDate,campaignFinishDate,estimatedCost);
+	Campaign campaigns=new Campaign(client.clientCampaign.size()+1,selectedClient,campaignTitle,campaignStartDate,campaignFinishDate,estimatedCost);
 	
 	return campaigns;
 }
@@ -115,22 +127,27 @@ public Campaign createCampaign(int selectedClient) {
 			}
 		}
 	}
-	public void getCampaigns() {
+	public void getCampaigns(int selectedClients) {
 		for(int i=0;i<database.dataClient.size();i++) {
-			for(int j=0; j<database.dataClient.get(i).clientCampaign.size();j++) {
-				Utils.print(String.valueOf(database.dataClient.get(i).clientCampaign.get(j).getTitle()));
-			}
-		}
-	}
-	public void selectCampaign(int selectCampaign) {
-		for(int i=0;i<database.dataClient.size();i++) {
-			for(int j=0;i<database.dataClient.get(i).clientCampaign.size();j++) {
-				if(j+1==selectCampaign) {
-					Utils.print(database.dataClient.get(i).clientCampaign.get(j).getTitle());
-					break;
+			if(i+1==selectedClients) {
+				for(int j=0; j<database.dataClient.get(i).clientCampaign.size();j++) {
+					Utils.print(String.valueOf(database.dataClient.get(i).clientCampaign.get(j).getTitle()));
 				}
 			}
 			
+		}
+	}
+	public void selectCampaign(int selectedClients,int selectCampaign) {
+		for(int i=0;i<database.dataClient.size();i++) {
+			if(i+1==selectedClients) {
+				for(int j=0;i<database.dataClient.get(i).clientCampaign.size();j++) {
+					if(j+1==selectCampaign) {
+						Utils.print(database.dataClient.get(i).clientCampaign.get(j).getTitle());
+						break;
+					}
+				}
+				break;
+			}
 		}
 	}
 }

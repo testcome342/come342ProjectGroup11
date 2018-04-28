@@ -15,7 +15,7 @@ public class AddNewCampaignControl {
 	public void createNewCampaignControl(int selectedClient) {
 		campaign=new Campaign();
 		campaign.createCampaign(selectedClient);
-		campaign=new Campaign(selectedClient,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
+		campaign=new Campaign(database.dataClient.get(selectedClient).clientCampaign.size()+1,selectedClient,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
 		//client.addNewCampaigns(campaign);
 		database.dataClient.get(selectedClient-1).clientCampaign.add(campaign);
 		Utils.printLineNumber(50);

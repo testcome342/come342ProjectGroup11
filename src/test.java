@@ -61,13 +61,19 @@ public class test{
 				campaignUI.createNewCampaignUI(selectedClient);
 				break;
 			case 5:
+				Utils.print("|                  Client List                   |");
+				Utils.printLineNumber(50);
+				campaignUI.startInterfaceUI(2);
+				Utils.printLineNumber(50);
+				Utils.print("Select Client => ",true);
+				int selectedClients=scan.nextInt();
+				Utils.printLineNumber(50);
+				staffUI.startInterface(selectedClients);
+				Utils.printLineNumber(50);
 				Utils.print("|                  Campaign List                 |");
-				Utils.printLineNumber(50);
-				staffUI.startInterface();
-				Utils.printLineNumber(50);
 				Utils.print("Select Campaign => ",true);
 				int selectedCampaign=scan.nextInt();
-				staffUI.selectCampaignUI(selectedCampaign);
+				staffUI.selectCampaignUI(selectedClients,selectedCampaign);
 				break;
 			case 11:
 

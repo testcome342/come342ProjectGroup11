@@ -165,7 +165,7 @@ public class Client {
 			campaign=new Campaign();
 			client=new Client(database.dataClient.size()+1,client.getCompanyName(),client.getCompanyAddress(),client.getCompanyName(),client.getContactName(),client.getContactEmail());
 			campaign.createCampaign(client.clientID);
-			campaign=new Campaign(client.clientID,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
+			campaign=new Campaign(clientCampaign.size()+1,client.clientID,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
 			client.addNewCampaigns(campaign);
 			database.dataClient.add(client);
 			Utils.printLineNumber(50);
@@ -194,7 +194,7 @@ public class Client {
 		for(int i=0;i<databaseCampaign.dataCampaign.size();i++)
 		{
 			if(campaignNumber==i+1) {
-				campaign=new Campaign(client.clientID,databaseCampaign.dataCampaign.get(i).getTitle(),databaseCampaign.dataCampaign.get(i).getCampaignStartDate(),databaseCampaign.dataCampaign.get(i).getCampaignFinishDate(),databaseCampaign.dataCampaign.get(i).getEstimatedCost());
+				campaign=new Campaign(database.dataCampaign.size()+1,client.clientID,databaseCampaign.dataCampaign.get(i).getTitle(),databaseCampaign.dataCampaign.get(i).getCampaignStartDate(),databaseCampaign.dataCampaign.get(i).getCampaignFinishDate(),databaseCampaign.dataCampaign.get(i).getEstimatedCost());
 				client.addNewCampaigns(campaign);
 				database.dataClient.add(client);
 				//database.dataClient.get(0).clientCampaign.add();
