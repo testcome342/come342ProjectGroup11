@@ -6,6 +6,7 @@ import Helper.Utils;
 
 public class Campaign {
 private int clientID;
+private int campaignID;
 public String title;
 public String campaignStartDate;
 public String campaignFinishDate;
@@ -102,6 +103,7 @@ public Campaign createCampaign(int selectedClient) {
 	
 	return campaigns;
 }
+
 	public void getCampaign() {
 		Database databaseCampaign=new Database("cc");
 		for(int i=0;i<databaseCampaign.dataCampaign.size();i++) {
@@ -111,6 +113,24 @@ public Campaign createCampaign(int selectedClient) {
 			{
 				break;
 			}
+		}
+	}
+	public void getCampaigns() {
+		for(int i=0;i<database.dataClient.size();i++) {
+			for(int j=0; j<database.dataClient.get(i).clientCampaign.size();j++) {
+				Utils.print(String.valueOf(database.dataClient.get(i).clientCampaign.get(j).getTitle()));
+			}
+		}
+	}
+	public void selectCampaign(int selectCampaign) {
+		for(int i=0;i<database.dataClient.size();i++) {
+			for(int j=0;i<database.dataClient.get(i).clientCampaign.size();j++) {
+				if(j+1==selectCampaign) {
+					Utils.print(database.dataClient.get(i).clientCampaign.get(j).getTitle());
+					break;
+				}
+			}
+			
 		}
 	}
 }

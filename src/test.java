@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import UI.AddNewClientUI;
+import UI.AssignStaffUI;
 import UI.AddNewCampaignUI;
 import Helper.Utils;
 import Model.Client;
@@ -7,6 +8,7 @@ import Model.Client;
 public class test{
 	static AddNewClientUI clientUI=new AddNewClientUI();
 	static AddNewCampaignUI campaignUI=new AddNewCampaignUI();
+	static AssignStaffUI staffUI=new AssignStaffUI();
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -59,7 +61,13 @@ public class test{
 				campaignUI.createNewCampaignUI(selectedClient);
 				break;
 			case 5:
-			
+				Utils.print("|                  Campaign List                 |");
+				Utils.printLineNumber(50);
+				staffUI.startInterface();
+				Utils.printLineNumber(50);
+				Utils.print("Select Campaign => ",true);
+				int selectedCampaign=scan.nextInt();
+				staffUI.selectCampaignUI(selectedCampaign);
 				break;
 			case 11:
 
