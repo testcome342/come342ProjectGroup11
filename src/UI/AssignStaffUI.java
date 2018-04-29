@@ -12,11 +12,11 @@ public class AssignStaffUI {
 		
 	}
 	public void selectCampaignUI(int selectedClients,int selectCampaign) {
-	staffControl.selectCampaignControl(selectedClients,selectCampaign);
+		staffControl.selectCampaignControl(selectedClients,selectCampaign);
 	}
 	
-	public void assignStaffToCampaignUI() {
-		
+	public void assignStaffToCampaignUI(int selectedClients,int selectCampaign) {
+		staffControl.assignStaffToCampaign(selectedClients,selectCampaign);
 	}
 	
 	

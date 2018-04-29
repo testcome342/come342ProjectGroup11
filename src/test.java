@@ -2,6 +2,7 @@ import java.util.Scanner;
 import UI.AddNewClientUI;
 import UI.AssignStaffUI;
 import UI.AddNewCampaignUI;
+import Helper.Database;
 import Helper.Utils;
 import Model.Client;
 
@@ -13,6 +14,8 @@ public class test{
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int selectType;
+		Database.fakeData();
+		
 		
 		Utils.printLineNumber(50);
 		Utils.print("|                                                |");
@@ -66,14 +69,17 @@ public class test{
 				campaignUI.startInterfaceUI(2);
 				Utils.printLineNumber(50);
 				Utils.print("Select Client => ",true);
-				int selectedClients=scan.nextInt();
+				int selectedClientsForCampaign=scan.nextInt();
 				Utils.printLineNumber(50);
-				staffUI.startInterface(selectedClients);
+				staffUI.startInterface(selectedClientsForCampaign);
 				Utils.printLineNumber(50);
 				Utils.print("|                  Campaign List                 |");
 				Utils.print("Select Campaign => ",true);
 				int selectedCampaign=scan.nextInt();
-				staffUI.selectCampaignUI(selectedClients,selectedCampaign);
+				staffUI.selectCampaignUI(selectedClientsForCampaign,selectedCampaign);
+				Utils.print("|                  Assign Staff To Campaign      |");
+				Utils.printLineNumber(50);
+				staffUI.assignStaffToCampaignUI(selectedClientsForCampaign,selectedCampaign);
 				break;
 			case 11:
 

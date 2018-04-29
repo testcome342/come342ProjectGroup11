@@ -4,12 +4,13 @@ import Model.Campaign;
 import Model.Client;
 
 public class Database {
-	public ArrayList<Client> dataClient=new ArrayList<Client>();
-	public ArrayList<Campaign> dataCampaign=new ArrayList<Campaign>();
-	public Client clientAppcent,clientVizyoneks;
+	public static ArrayList<Client> dataClient=new ArrayList<Client>();
+	public static ArrayList<Campaign> dataCampaign=new ArrayList<Campaign>();
+	public static Client clientAppcent;
+	public static Client clientVizyoneks;
 
 	
-	public Database() {
+	public static void fakeData() {
 		clientAppcent =new Client(1,"Appcent","AcÄ±badem","appcent@appcent.mobi","Arda Altunyay","arda.altunyay@appcent.mobi");
 		Campaign campaignAppcent=new Campaign(1,1,"Appcent Mobile Advert","12/04/2016","12/05/2016",345.5);
 		clientAppcent.addNewCampaigns(campaignAppcent);
@@ -31,7 +32,7 @@ public class Database {
 		
 
 	}
-	public  Database(String campaign) {
+	public static void fakeDataCampaign(String campaign) {
 		dataCampaign.add(new Campaign(1,1,"1. Yellow Friday","01/01/2018","01/06/2018",128.50));
 		dataCampaign.add(new Campaign(2,2,"2. Black Friday","20/10/2018","24/10/2018",85.0));
 		dataCampaign.add(new Campaign(3,3,"3. New Year","30/12/2017","01/01/2018",100.0));

@@ -9,9 +9,6 @@ public class AddNewClientUI {
 		if (selectType==1) {
 			clientControl.getClientControl(1);
 
-		}else if (selectType==2) {
-			clientControl.getClientControl(2);
-
 		}
 	}
 	public void createNewClientUI() {

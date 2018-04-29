@@ -13,7 +13,6 @@ public class Client {
 	public String companyEmail;
 	public String contactName;
 	public String contactEmail;
-	static Database database=new Database();
 	public ArrayList<Campaign> clientCampaign=new ArrayList<Campaign>();
 	static Client client=new Client();
 	public Campaign campaign;
@@ -134,7 +133,7 @@ public class Client {
 
 
 	public void createClient() {		
-		client.setClientID(database.dataClient.size()+1);
+		client.setClientID(Database.dataClient.size()+1);
 		System.out.print("Company Name..:");
 		client.setCompanyName(scan.nextLine());
 		
@@ -163,11 +162,11 @@ public class Client {
 		if(campaignType==1) {
 			Utils.printLineNumber(50);
 			campaign=new Campaign();
-			client=new Client(database.dataClient.size()+1,client.getCompanyName(),client.getCompanyAddress(),client.getCompanyName(),client.getContactName(),client.getContactEmail());
+			client=new Client(Database.dataClient.size()+1,client.getCompanyName(),client.getCompanyAddress(),client.getCompanyName(),client.getContactName(),client.getContactEmail());
 			campaign.createCampaign(client.clientID);
 			campaign=new Campaign(clientCampaign.size()+1,client.clientID,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
 			client.addNewCampaigns(campaign);
-			database.dataClient.add(client);
+			Database.dataClient.add(client);
 			Utils.printLineNumber(50);
 			client.getClientCampaigns(client.clientID);
 			System.out.println("Saved Successfull");
@@ -181,7 +180,6 @@ public class Client {
 	}
 	public void addNewCampaign() {
 		
-		Database databaseCampaign=new Database("cc");
 		Utils.print("|                   Campaign List                |");
 		Utils.printLineNumber(50);
 		campaign=new Campaign();
@@ -191,12 +189,12 @@ public class Client {
 		
 		campaignNumber=scan.nextInt();
 		
-		for(int i=0;i<databaseCampaign.dataCampaign.size();i++)
+		for(int i=0;i<Database.dataCampaign.size();i++)
 		{
 			if(campaignNumber==i+1) {
-				campaign=new Campaign(database.dataCampaign.size()+1,client.clientID,databaseCampaign.dataCampaign.get(i).getTitle(),databaseCampaign.dataCampaign.get(i).getCampaignStartDate(),databaseCampaign.dataCampaign.get(i).getCampaignFinishDate(),databaseCampaign.dataCampaign.get(i).getEstimatedCost());
+				campaign=new Campaign(Database.dataCampaign.size()+1,client.clientID,Database.dataCampaign.get(i).getTitle(),Database.dataCampaign.get(i).getCampaignStartDate(),Database.dataCampaign.get(i).getCampaignFinishDate(),Database.dataCampaign.get(i).getEstimatedCost());
 				client.addNewCampaigns(campaign);
-				database.dataClient.add(client);
+				Database.dataClient.add(client);
 				//database.dataClient.get(0).clientCampaign.add();
 			
 			}
@@ -207,34 +205,29 @@ public class Client {
 		this.clientCampaign.add(campaign);
 	}
 	public void getClient() {
-		for(int i=0;i<database.dataClient.size();i++) {
-			if(i<=database.dataClient.size()) {
-				System.out.println(database.dataClient.get(i).getClientID()+"."+database.dataClient.get(i).getCompanyName());
-			}else if(i>database.dataClient.size())
-			{
-				break;
-			}
+		for(int i=0;i<Database.dataClient.size();i++) {
+				System.out.println(Database.dataClient.get(i).getClientID()+"."+Database.dataClient.get(i).getCompanyName());
 		}
 	}
 	public void clientInformation() {
 		System.out.println("               Client Information          ");
 		Utils.printLineNumber(50);
-		for	(int i=0;i<database.dataClient.size();i++) {
-			Utils.print(database.dataClient.get(i).companyName+"    Company Information   ");
+		for	(int i=0;i<Database.dataClient.size();i++) {
+			Utils.print(Database.dataClient.get(i).companyName+"    Company Information   ");
 			Utils.printLineNumber(50);
-			Utils.print("Company Name..:"+database.dataClient.get(i).companyName +"\n"+
-					"Company Address..:"+database.dataClient.get(i).companyAddress +"\n"+
-					"Company Email..:"+database.dataClient.get(i).companyEmail+ "\n"+
-					"Contact Name..:"+database.dataClient.get(i).contactName +"\n"+
-					"Contact Email..:"+database.dataClient.get(i).contactEmail+"\n");
+			Utils.print("Company Name..:"+Database.dataClient.get(i).companyName +"\n"+
+					"Company Address..:"+Database.dataClient.get(i).companyAddress +"\n"+
+					"Company Email..:"+Database.dataClient.get(i).companyEmail+ "\n"+
+					"Contact Name..:"+Database.dataClient.get(i).contactName +"\n"+
+					"Contact Email..:"+Database.dataClient.get(i).contactEmail+"\n");
 			Utils.print("              Client Campaigns               ");
 			Utils.printLineNumber(50);
-			for(int j=0;j<database.dataClient.get(i).clientCampaign.size();j++) {
-				if(database.dataClient.get(i).clientCampaign.get(j).getClientID()==database.dataClient.get(i).getClientID()) {
-					Utils.print("Campaign Title..:"+database.dataClient.get(i).clientCampaign.get(j).getTitle()+"\n"+
-						"Campaign Start Date..:"+database.dataClient.get(i).clientCampaign.get(j).getCampaignStartDate()+"\n"+
-						"Campaign Finish Date..:"+database.dataClient.get(i).clientCampaign.get(j).getCampaignFinishDate()+"\n"+
-						"Campaign Estimated Cost..:"+database.dataClient.get(i).clientCampaign.get(j).getEstimatedCost()+"\n");
+			for(int j=0;j<Database.dataClient.get(i).clientCampaign.size();j++) {
+				if(Database.dataClient.get(i).clientCampaign.get(j).getClientID()==Database.dataClient.get(i).getClientID()) {
+					Utils.print("Campaign Title..:"+Database.dataClient.get(i).clientCampaign.get(j).getTitle()+"\n"+
+						"Campaign Start Date..:"+Database.dataClient.get(i).clientCampaign.get(j).getCampaignStartDate()+"\n"+
+						"Campaign Finish Date..:"+Database.dataClient.get(i).clientCampaign.get(j).getCampaignFinishDate()+"\n"+
+						"Campaign Estimated Cost..:"+Database.dataClient.get(i).clientCampaign.get(j).getEstimatedCost()+"\n");
 						
 				}else{
 					Utils.print("There is No Campaign...");
@@ -248,13 +241,13 @@ public class Client {
 		
 	}
 	public void getClientCampaigns(int selectedClient) {
-		for(int i=0;i<database.dataClient.size();i++) {
+		for(int i=0;i<Database.dataClient.size();i++) {
 			if(i+1==selectedClient) {
-				Utils.print("               "+database.dataClient.get(i).getCompanyName()+ " Company Campaigns");
+				Utils.print("               "+Database.dataClient.get(i).getCompanyName()+ " Company Campaigns");
 				Utils.printLineNumber(50);
-				for(int j=0; j<database.dataClient.get(i).clientCampaign.size();j++) {
-					if(database.dataClient.get(i).clientCampaign.get(j).getClientID()==selectedClient) {
-						Utils.print(database.dataClient.get(i).clientCampaign.get(j).getTitle());	
+				for(int j=0; j<Database.dataClient.get(i).clientCampaign.size();j++) {
+					if(Database.dataClient.get(i).clientCampaign.get(j).getClientID()==selectedClient) {
+						Utils.print(Database.dataClient.get(i).clientCampaign.get(j).getTitle());	
 					}	
 				}
 				

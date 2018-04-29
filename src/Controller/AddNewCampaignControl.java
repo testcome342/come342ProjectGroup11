@@ -8,16 +8,15 @@ import Model.Client;
 public class AddNewCampaignControl {
 	Campaign campaign;
 	Client client=new Client();
-	static Database database=new Database();
 	public void showClientCampaigns(int selectedClient) {
 		client.getClientCampaigns(selectedClient);
 	}
 	public void createNewCampaignControl(int selectedClient) {
 		campaign=new Campaign();
 		campaign.createCampaign(selectedClient);
-		campaign=new Campaign(database.dataClient.get(selectedClient).clientCampaign.size()+1,selectedClient,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
+		campaign=new Campaign(Database.dataClient.get(selectedClient).clientCampaign.size()+1,selectedClient,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
 		//client.addNewCampaigns(campaign);
-		database.dataClient.get(selectedClient-1).clientCampaign.add(campaign);
+		Database.dataClient.get(selectedClient-1).clientCampaign.add(campaign);
 		Utils.printLineNumber(50);
 		client.getClientCampaigns(selectedClient);
 		System.out.println("Saved Successfull");
