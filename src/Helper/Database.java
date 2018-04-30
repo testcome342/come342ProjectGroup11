@@ -32,7 +32,7 @@ public class Database {
 		
 
 	}
-	public static void fakeDataCampaign(String campaign) {
+	public static void fakeDataCampaign() {
 		dataCampaign.add(new Campaign(1,1,"1. Yellow Friday","01/01/2018","01/06/2018",128.50));
 		dataCampaign.add(new Campaign(2,2,"2. Black Friday","20/10/2018","24/10/2018",85.0));
 		dataCampaign.add(new Campaign(3,3,"3. New Year","30/12/2017","01/01/2018",100.0));

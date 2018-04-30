@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import UI.AddNewClientUI;
 import UI.AssignStaffUI;
+import UI.AddNewAdvertToCampaignUI;
 import UI.AddNewCampaignUI;
 import Helper.Database;
 import Helper.Utils;
@@ -10,7 +11,8 @@ public class test{
 	static AddNewClientUI clientUI=new AddNewClientUI();
 	static AddNewCampaignUI campaignUI=new AddNewCampaignUI();
 	static AssignStaffUI staffUI=new AssignStaffUI();
-
+	static AddNewAdvertToCampaignUI advertUI=new AddNewAdvertToCampaignUI();
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int selectType;
@@ -82,7 +84,23 @@ public class test{
 				staffUI.assignStaffToCampaignUI(selectedClientsForCampaign,selectedCampaign);
 				break;
 			case 11:
-
+				Utils.print("|                  Client List                   |");
+				Utils.printLineNumber(50);
+				campaignUI.startInterfaceUI(2);
+				Utils.printLineNumber(50);
+				Utils.print("Select Client => ",true);
+				int selectedClientsForAdvert=scan.nextInt();
+				Utils.printLineNumber(50);
+				staffUI.startInterface(selectedClientsForAdvert);
+				Utils.printLineNumber(50);
+				Utils.print("|                  Campaign List                 |");
+				Utils.print("Select Campaign => ",true);
+				int selectedCampaignForAdvert=scan.nextInt();
+				staffUI.selectCampaignUI(selectedClientsForAdvert,selectedCampaignForAdvert);
+				Utils.print("|                  Add a new Advert            |");
+				Utils.printLineNumber(50);
+				advertUI.addNewAdvertToCampaignUI(selectedClientsForAdvert, selectedCampaignForAdvert);
+				
 				break;
 			case 12:
 

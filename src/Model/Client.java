@@ -132,7 +132,8 @@ public class Client {
 	}
 
 
-	public void createClient() {		
+	public void createClient() {
+		
 		client.setClientID(Database.dataClient.size()+1);
 		System.out.print("Company Name..:");
 		client.setCompanyName(scan.nextLine());
@@ -182,6 +183,7 @@ public class Client {
 		
 		Utils.print("|                   Campaign List                |");
 		Utils.printLineNumber(50);
+		Database.fakeDataCampaign();
 		campaign=new Campaign();
 		campaign.getCampaign();
 		Utils.printLineNumber(50);

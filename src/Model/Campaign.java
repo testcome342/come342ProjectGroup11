@@ -14,6 +14,7 @@ public class Campaign {
 	public Client client=new Client();
 	public ArrayList<Client> dataClient=new ArrayList<Client>();
 	public ArrayList<StaffMember> staffMemberCampaign=new ArrayList<StaffMember>();
+	public ArrayList<Advert> advertCampaign=new ArrayList<Advert>();
 	Scanner scan=new Scanner(System.in);
 
 
@@ -109,16 +110,16 @@ public class Campaign {
 		String campaignTitle,campaignStartDate,campaignFinishDate;
 		double estimatedCost;
 		
-		System.out.print("Campaign Title.:");
+		Utils.print("Campaign Title.:");
 		campaignTitle=scan.nextLine();
 		setTitle(campaignTitle);
-		System.out.print("Campaign Start Date..:");
+		Utils.print("Campaign Start Date..:");
 		campaignStartDate=scan.nextLine();
 		setCampaignStartDate(campaignStartDate);
-		System.out.print("Campaign Finish Date..:");
+		Utils.print("Campaign Finish Date..:");
 		campaignFinishDate=scan.nextLine();
 		setCampaignFinishDate(campaignFinishDate);
-		System.out.print("Estimated Cost..:");
+		Utils.print("Estimated Cost..:");
 		estimatedCost=scan.nextDouble();
 		setEstimatedCost(estimatedCost);
 		Campaign campaigns=new Campaign(client.clientCampaign.size()+1,selectedClient,campaignTitle,campaignStartDate,campaignFinishDate,estimatedCost);
@@ -141,7 +142,7 @@ public class Campaign {
 		for(int i=0;i<Database.dataClient.size();i++) {
 			if(i+1==selectedClients) {
 				for(int j=0; j<Database.dataClient.get(i).clientCampaign.size();j++) {
-					Utils.print(String.valueOf(Database.dataClient.get(i).clientCampaign.get(j).getTitle()));
+					Utils.print(String.valueOf(Database.dataClient.get(i).clientCampaign.get(j).getCampaignID()+"."+Database.dataClient.get(i).clientCampaign.get(j).getTitle()));
 				}
 			}
 			
@@ -188,6 +189,39 @@ public class Campaign {
 				break;
 			}
 		}
+		
+	}
+	
+	public void assignAdvertToCampaign(int selectedClients,int selectCampaign,Advert advert,String advertType) {
+		for(int i=0;i<Database.dataClient.size();i++) {
+			if(i+1==selectedClients) {
+				for(int j=0;i<Database.dataClient.get(i).clientCampaign.size();j++) {
+					if(j+1==selectCampaign) {
+						this.advertCampaign.add(advert);
+						Utils.printLineNumber(50);
+						Utils.print("   ADVERT INFORMATION");
+						Utils.printLineNumber(50);
+						Utils.print("Company  Name..:"+Database.dataClient.get(selectedClients-1).getCompanyName());
+						Utils.printLineNumber(50);
+						Utils.print("Campaign Name..:"+Database.dataClient.get(selectedClients-1).clientCampaign.get(selectCampaign-1).getTitle());
+						Utils.printLineNumber(50);
+						Utils.print("Advert Type..:"+advertType);
+						Utils.printLineNumber(50);
+						for(int k=0;k<Database.dataClient.get(i).clientCampaign.get(j).advertCampaign.size();k++) {
+							advertCampaign.get(k);
+							Utils.print(""+StaffMember.getStaffNo());
+							Utils.print(""+advertCampaign.get(k).getAdvertTitle());
+							Utils.print(""+advertCampaign.get(k).getTargetCompletionDate());
+							Utils.print(""+advertCampaign.get(k).getEstimatedAdvertCost());
+							Utils.print(""+advertCampaign.get(k).getActualAdvertCost());
+						}
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
 	}
 }
 
