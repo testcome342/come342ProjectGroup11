@@ -28,21 +28,21 @@ public class AssignStaffControl {
 		int type=scan.nextInt();
 		switch(type) {
 			case 1:
-				staffMember=new CreativeStaff();
+				staffMember=new CreativeStaff(0,"","","");
 				staffMember.assignStaff(selectedClients, selectCampaign);
 				Database.dataClient.get(selectedClients-1).clientCampaign.get(selectCampaign-1).staffMemberCampaign.add(staffMember);
 				String staffTypeNameCreative="Creative Staff";
 				campaign.assignStaffToCampaign(selectedClients, selectCampaign,staffMember,staffTypeNameCreative);
 				break;
 			case 2:
-				staffMember=new AdminStaff();
+				staffMember=new AdminStaff(0,"","","");
 				staffMember.assignStaff(selectedClients, selectCampaign);
 				Database.dataClient.get(selectedClients-1).clientCampaign.get(selectCampaign-1).staffMemberCampaign.add(staffMember);
 				String staffTypeNameAdmin="Admin Staff";
 				campaign.assignStaffToCampaign(selectedClients, selectCampaign,staffMember,staffTypeNameAdmin);
 				break;
 			case 3:
-				staffMember=new AccountManager();
+				staffMember=new AccountManager(0,"","","");
 				staffMember.assignStaff(selectedClients, selectCampaign);
 				Database.dataClient.get(selectedClients-1).clientCampaign.get(selectCampaign-1).staffMemberCampaign.add(staffMember);
 				String staffTypeNameAccountManager="Account Manager";

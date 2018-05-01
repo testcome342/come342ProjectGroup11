@@ -7,16 +7,11 @@ import Helper.Utils;
 public class AdminStaff extends StaffMember {
 	int aStaffNumber;
 	String aStaffName;
-	String aStaffStartDate;
+    String aStaffStartDate;
 	String aStaffEmailAddress;
 	
-	public AdminStaff() {
-		super(staffNo, staffName, staffStartDate, staffEmailAdress);
-		
-	}
 	public AdminStaff(int staffNo, String staffName, String staffStartDate, String staffEmailAdress) {
-		super(staffNo, staffName, staffStartDate, staffEmailAdress);
-		
+		super(2,staffNo, staffName, staffStartDate, staffEmailAdress);
 	}
 
 	public int getaStaffNumber() {
@@ -49,6 +44,31 @@ public class AdminStaff extends StaffMember {
 		Utils.print("Admin Staff Number..:",true);
 		aStaffNumber=scan.nextInt();
 		setaStaffNumber(aStaffNumber);
+		staffNo=aStaffNumber;
+		Utils.print("Admin Staff Name..:",true);
+		aStaffName=scan.next();
+		setaStaffName(aStaffName);
+		staffName=aStaffName;
+		Utils.print("Admin Staff Start Date..:",true);
+		aStaffStartDate=scan.next();
+		setaStaffStartDate(aStaffStartDate);
+		staffStartDate=aStaffStartDate;
+		Utils.print("Admin Staff Email Address..:",true);
+		aStaffEmailAddress=scan.next();
+		setaStaffEmailAddress(aStaffEmailAddress);
+		staffEmailAdress=aStaffEmailAddress;
+
+		StaffMember staff=new AdminStaff(aStaffNumber,aStaffName,aStaffStartDate,aStaffEmailAddress);
+		return staff;
+		
+	}
+	
+	@Override
+	public StaffMember addNewMemberofStaff() {
+		Scanner scan=new Scanner(System.in);
+		Utils.print("Admin Staff Number..:",true);
+		aStaffNumber=scan.nextInt();
+		setaStaffNumber(aStaffNumber);
 		
 		Utils.print("Admin Staff Name..:",true);
 		aStaffName=scan.next();
@@ -64,12 +84,5 @@ public class AdminStaff extends StaffMember {
 		
 		StaffMember staff=new AdminStaff(aStaffNumber,aStaffName,aStaffStartDate,aStaffEmailAddress);
 		return staff;
-		
-	}
-
-	@Override
-	public StaffMember getStaffDetails() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	}	
 }

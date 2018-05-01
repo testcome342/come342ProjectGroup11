@@ -1,29 +1,35 @@
 package Helper;
 import java.util.ArrayList;
+
+import Model.AdminStaff;
 import Model.Campaign;
 import Model.Client;
+import Model.CreativeStaff;
+import Model.StaffMember;
 
 public class Database {
 	public static ArrayList<Client> dataClient=new ArrayList<Client>();
 	public static ArrayList<Campaign> dataCampaign=new ArrayList<Campaign>();
-	public static Client clientAppcent;
-	public static Client clientVizyoneks;
+	public static ArrayList<StaffMember> dataStaff=new ArrayList<StaffMember>();	
+	public static Client clientBoyner;
+	public static Client clientBeymen;
+	public static StaffMember staff;
 
 	
 	public static void fakeData() {
-		clientAppcent =new Client(1,"Appcent","AcÄ±badem","appcent@appcent.mobi","Arda Altunyay","arda.altunyay@appcent.mobi");
+		clientBoyner =new Client(1,"Appcent","AcÄ±badem","appcent@appcent.mobi","Arda Altunyay","arda.altunyay@appcent.mobi");
 		Campaign campaignAppcent=new Campaign(1,1,"Appcent Mobile Advert","12/04/2016","12/05/2016",345.5);
-		clientAppcent.addNewCampaigns(campaignAppcent);
+		clientBoyner.addNewCampaigns(campaignAppcent);
 		Campaign campaignAppcentIOS=new Campaign(2,1,"Appcent Mobile IOS","13/06/2018","17/08/2018",360.5);
-		clientAppcent.addNewCampaigns(campaignAppcentIOS);
-		dataClient.add(clientAppcent);
+		clientBoyner.addNewCampaigns(campaignAppcentIOS);
+		dataClient.add(clientBoyner);
 		
-		clientVizyoneks=new Client(2,"Vizyoneks","Ataşehir","vizyoneks@gmail.com","Hasan Arınç","hasanarinc@gmail.com");
+		clientBeymen=new Client(2,"Vizyoneks","Ataşehir","vizyoneks@gmail.com","Hasan Arınç","hasanarinc@gmail.com");
 		Campaign campaignVizyoneks10=new Campaign(1,2,"Vizyoneks 10. YIL JAVA","12/04/2016","12/05/2016",345.5);
-		clientVizyoneks.addNewCampaigns(campaignVizyoneks10);
+		clientBeymen.addNewCampaigns(campaignVizyoneks10);
 		Campaign campaignVizyoneks20=new Campaign(2,2,"Vizyoneks 20. YIL JAVA","13/06/2018","17/08/2018",360.5);
-		clientVizyoneks.addNewCampaigns(campaignVizyoneks20);
-		dataClient.add(clientVizyoneks);
+		clientBeymen.addNewCampaigns(campaignVizyoneks20);
+		dataClient.add(clientBeymen);
 		
 		dataClient.add(new Client(3,"HasKaPP","KadÄ±kÃ¶y","haskapp@gmail.com","Kaan KÃ¼n","kaanforum4@gmail.com"));
 		dataClient.add(new Client(4,"Å�imÅŸek Holding","Levent","simsekholding@gmail.com","AslÄ± Å�imÅŸek","aslisimsek@gmail.com"));
@@ -39,6 +45,17 @@ public class Database {
 		dataCampaign.add(new Campaign(4,4,"4. Valentine's Day","14/02/2018","15/02/2018",15.75));
 	}
 
+	public static void fakeDataStaff() {
+		CreativeStaff cs=new CreativeStaff(1,"Kaan Kün","12/06/2018","kaan.kun@agate.com");
+		CreativeStaff cs1=new CreativeStaff(1,"Kaan","12/06/2018","kaan.kun@agate.com");
+		CreativeStaff cs2=new CreativeStaff(1,"Hasan","12/06/2018","kaan.kun@agate.com");
+		AdminStaff 	  as3=new AdminStaff(1,"HOSOOSO","12/06/2018","kaan.kun@agate.com");
+		
+		dataStaff.add(cs);
+		dataStaff.add(cs1);
+		dataStaff.add(cs2);
+		dataStaff.add(as3);
+	}
 	public ArrayList<Client> getList() {
 	       return dataClient;
 	}

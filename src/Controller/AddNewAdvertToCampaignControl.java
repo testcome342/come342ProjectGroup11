@@ -42,14 +42,14 @@ public class AddNewAdvertToCampaignControl {
 					Advert advertTelevision=new TelevisionAdvert("","",0,0);
 					advertTelevision.createAdvert(selectedClient, selectedCampaign);
 					Database.dataClient.get(selectedClient-1).clientCampaign.get(selectedCampaign-1).advertCampaign.add(advertTelevision);
-					Utils.print("ok");
+					Utils.print("Saved Successfull");
 					campaign.assignAdvertToCampaign(selectedClient, selectedCampaign,advertTelevision,"Television Advert");
 					break;
 				case 2:
 					Advert advertRadio=new RadioAdvert("","",0,0);
 					advertRadio.createAdvert(selectedClient, selectedCampaign);
 					Database.dataClient.get(selectedClient-1).clientCampaign.get(selectedCampaign-1).advertCampaign.add(advertRadio);
-					Utils.print("ok");
+					Utils.print("Saved Successfull");
 					campaign.assignAdvertToCampaign(selectedClient, selectedCampaign,advertRadio,"Radio Advert");
 					break;
 				default:
@@ -70,28 +70,28 @@ public class AddNewAdvertToCampaignControl {
 					Advert advertNewspaper=new NewspaperAdvert("","",0,0);
 					advertNewspaper.createAdvert(selectedClient, selectedCampaign);
 					Database.dataClient.get(selectedClient-1).clientCampaign.get(selectedCampaign-1).advertCampaign.add(advertNewspaper);
-					Utils.print("ok");
+					Utils.print("Saved Successfull");
 					campaign.assignAdvertToCampaign(selectedClient, selectedCampaign,advertNewspaper,"Newspaper Advert");
 					break;
 				case 2:
 					Advert advertMagazine=new MagazineAdvert("","",0,0);
 					advertMagazine.createAdvert(selectedClient, selectedCampaign);
 					Database.dataClient.get(selectedClient-1).clientCampaign.get(selectedCampaign-1).advertCampaign.add(advertMagazine);
-					Utils.print("ok");
+					Utils.print("Saved Successfull");
 					campaign.assignAdvertToCampaign(selectedClient, selectedCampaign,advertMagazine,"Magazine Advert");
 					break;
 				case 3:
 					Advert advertPoster=new PosterAdvert("","",0,0);
 					advertPoster.createAdvert(selectedClient, selectedCampaign);
 					Database.dataClient.get(selectedClient-1).clientCampaign.get(selectedCampaign-1).advertCampaign.add(advertPoster);
-					Utils.print("ok");
+					Utils.print("Saved Successfull");
 					campaign.assignAdvertToCampaign(selectedClient, selectedCampaign,advertPoster,"Poster Advert");
 					break;
 				case 4:
 					Advert advertLeaflet=new LeafletAdvert("","",0,0);
 					advertLeaflet.createAdvert(selectedClient, selectedCampaign);
 					Database.dataClient.get(selectedClient-1).clientCampaign.get(selectedCampaign-1).advertCampaign.add(advertLeaflet);
-					Utils.print("ok");
+					Utils.print("Saved Successfull");
 					campaign.assignAdvertToCampaign(selectedClient, selectedCampaign,advertLeaflet,"Leaflet Advert");
 					break;
 					default:

@@ -177,11 +177,11 @@ public class Campaign {
 						Utils.print("Staff    Type..:"+staffType);
 						Utils.printLineNumber(50);
 						for(int k=0;k<Database.dataClient.get(i).clientCampaign.get(j).staffMemberCampaign.size();k++) {
-							staffMemberCampaign.get(k);
-							Utils.print(""+StaffMember.getStaffNo());
-							Utils.print(""+staffMemberCampaign.get(k).getStaffName());
-							Utils.print(""+staffMemberCampaign.get(k).getStaffStartDate());
-							Utils.print(""+staffMemberCampaign.get(k).getStaffEmailAdress());
+							
+							Utils.print(""+staffMemberCampaign.get(k).staffNo);
+							Utils.print(""+staffMemberCampaign.get(k).staffName);
+							Utils.print(""+staffMemberCampaign.get(k).staffStartDate);
+							Utils.print(""+staffMemberCampaign.get(k).staffEmailAdress);
 						}
 						break;
 					}
@@ -209,7 +209,6 @@ public class Campaign {
 						Utils.printLineNumber(50);
 						for(int k=0;k<Database.dataClient.get(i).clientCampaign.get(j).advertCampaign.size();k++) {
 							advertCampaign.get(k);
-							Utils.print(""+StaffMember.getStaffNo());
 							Utils.print(""+advertCampaign.get(k).getAdvertTitle());
 							Utils.print(""+advertCampaign.get(k).getTargetCompletionDate());
 							Utils.print(""+advertCampaign.get(k).getEstimatedAdvertCost());

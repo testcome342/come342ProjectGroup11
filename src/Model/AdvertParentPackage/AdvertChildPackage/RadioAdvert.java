@@ -52,7 +52,7 @@ public class RadioAdvert extends DigitalAdvert {
 		setActualAdvertCost(actualAdvertCost);
 		
 		Utils.print("Actors Name..:");
-		actorsName=scan.next();
+		actorsName=scan.nextLine();
 		setActors(actorsName);
 		
 		Utils.print("Voice Overs Name..:");

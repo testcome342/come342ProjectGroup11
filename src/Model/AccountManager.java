@@ -6,15 +6,14 @@ import Helper.Utils;
 
 public class AccountManager extends StaffMember {
 
-	int aStaffNumber;
-	String aStaffName,aStaffStartDate,aStaffEmailAddress;
+	static int aStaffNumber;
+	static String aStaffName;
+	static String aStaffStartDate;
+	static String aStaffEmailAddress;
 	
-	public AccountManager() {
-		super(staffNo, staffName, staffStartDate, staffEmailAdress);
-		
-	}
+	
 	public AccountManager(int staffNo, String staffName, String staffStartDate, String staffEmailAdress) {
-		super(staffNo, staffName, staffStartDate, staffEmailAdress);
+		super(3,staffNo, staffName, staffStartDate, staffEmailAdress);
 		
 	}
 	
@@ -49,25 +48,51 @@ public class AccountManager extends StaffMember {
 		Utils.print("Account Manager Number..:",true);
 		aStaffNumber=scan.nextInt();
 		setaStaffNumber(aStaffNumber);
-		
+		staffNo=aStaffNumber;
 		Utils.print("Account Manager Name..:",true);
 		aStaffName=scan.next();
 		setaStaffName(aStaffName);
-		
+		staffName=aStaffName;
 		Utils.print("Account Manager Start Date..:",true);
 		aStaffStartDate=scan.next();
 		setaStaffStartDate(aStaffStartDate);
-		
+		staffStartDate=aStaffStartDate;
+
 		Utils.print("Account Manager Email Address..:",true);
 		aStaffEmailAddress=scan.next();
 		setaStaffEmailAddress(aStaffEmailAddress);
+		staffEmailAdress=aStaffEmailAddress;
+
+		
 		StaffMember staff=new AccountManager(aStaffNumber,aStaffName,aStaffStartDate,aStaffEmailAddress);
 		return staff;
 	}
 
 	@Override
-	public StaffMember getStaffDetails() {
-		// TODO Auto-generated method stub
-		return null;
+	public StaffMember addNewMemberofStaff() {
+		Scanner scan=new Scanner(System.in);
+		Utils.print("Account Manager Number..:",true);
+		aStaffNumber=scan.nextInt();
+		setaStaffNumber(aStaffNumber);
+		staffNo=aStaffNumber;
+		Utils.print("Account Manager Name..:",true);
+		aStaffName=scan.next();
+		setaStaffName(aStaffName);
+		staffName=aStaffName;
+		Utils.print("Account Manager Start Date..:",true);
+		aStaffStartDate=scan.next();
+		setaStaffStartDate(aStaffStartDate);
+		staffStartDate=aStaffStartDate;
+
+		Utils.print("Account Manager Email Address..:",true);
+		aStaffEmailAddress=scan.next();
+		setaStaffEmailAddress(aStaffEmailAddress);
+		staffEmailAdress=aStaffEmailAddress;
+
+		
+		StaffMember staff=new AccountManager(aStaffNumber,aStaffName,aStaffStartDate,aStaffEmailAddress);
+		return staff;
 	}
+	
+
 }

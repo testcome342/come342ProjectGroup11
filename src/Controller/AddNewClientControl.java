@@ -11,9 +11,7 @@ public class AddNewClientControl {
 	public void createNewClientControl() {
 		client.createClient();
 	}
-	/*public void createNewCampaignControl() {
-		campaign.createCampaign();
-	}*/	
+		
 	public void getClientControl(int selectType) {
 		if(selectType==1) {
 			client.getClient();

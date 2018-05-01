@@ -1,43 +1,71 @@
 package Model;
 
+import java.util.ArrayList;
+
+import Helper.Database;
+import Helper.Utils;
+
 public abstract class StaffMember {
-	public static int staffNo;
-	public static String staffName;
-	public static String staffStartDate;
-	public static String staffEmailAdress;
+	public int staffType;
+	public int staffNo;
+	public String staffName;
+	public String staffStartDate;
+	public String staffEmailAdress;
 	
 	public abstract StaffMember assignStaff(int selectedClients,int selectCampaign);
-	public abstract StaffMember getStaffDetails();
-	
-	public StaffMember(int staffNo, String staffName, String staffStartDate, String staffEmailAdress) {
-		StaffMember.staffNo = staffNo;
-		StaffMember.staffName = staffName;
-		StaffMember.staffStartDate = staffStartDate;
-		StaffMember.staffEmailAdress = staffEmailAdress;
+	public abstract StaffMember addNewMemberofStaff();
+	public static ArrayList<StaffMember> getStaffMembers() {
+		return Database.dataStaff;
 	}
-	public static int getStaffNo() {
+	
+	public StaffMember(int staffType,int staffNo, String staffName, String staffStartDate, String staffEmailAdress) {
+		this.staffType=staffType;
+		this.staffNo = staffNo;
+		this.staffName = staffName;
+		this.staffStartDate = staffStartDate;
+		this.staffEmailAdress = staffEmailAdress;
+	}
+	
+
+	public int getStaffType() {
+		return staffType;
+	}
+
+	public void setStaffType(int staffType) {
+		this.staffType = staffType;
+	}
+
+	public int getStaffNo() {
 		return staffNo;
 	}
-	public static void setStaffNo(int staffNo) {
-		StaffMember.staffNo = staffNo;
+
+	public void setStaffNo(int staffNo) {
+		this.staffNo = staffNo;
 	}
-	public static String getStaffName() {
+
+	public String getStaffName() {
 		return staffName;
 	}
-	public static void setStaffName(String staffName) {
-		StaffMember.staffName = staffName;
+
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
 	}
-	public static String getStaffStartDate() {
+
+	public String getStaffStartDate() {
 		return staffStartDate;
 	}
-	public static void setStaffStartDate(String staffStartDate) {
-		StaffMember.staffStartDate = staffStartDate;
+
+	public void setStaffStartDate(String staffStartDate) {
+		this.staffStartDate = staffStartDate;
 	}
-	public static String getStaffEmailAdress() {
+
+	public String getStaffEmailAdress() {
 		return staffEmailAdress;
 	}
-	public static void setStaffEmailAdress(String staffEmailAdress) {
-		StaffMember.staffEmailAdress = staffEmailAdress;
+
+	public void setStaffEmailAdress(String staffEmailAdress) {
+		this.staffEmailAdress = staffEmailAdress;
 	}
+	
 	
 }

@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+import UI.AddNewMemberofStaffUI;
 import UI.AddNewClientUI;
 import UI.AssignStaffUI;
 import UI.AddNewAdvertToCampaignUI;
@@ -12,6 +14,7 @@ public class test{
 	static AddNewCampaignUI campaignUI=new AddNewCampaignUI();
 	static AssignStaffUI staffUI=new AssignStaffUI();
 	static AddNewAdvertToCampaignUI advertUI=new AddNewAdvertToCampaignUI();
+	static AddNewMemberofStaffUI staffMemberUI=new AddNewMemberofStaffUI();
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -97,13 +100,26 @@ public class test{
 				Utils.print("Select Campaign => ",true);
 				int selectedCampaignForAdvert=scan.nextInt();
 				staffUI.selectCampaignUI(selectedClientsForAdvert,selectedCampaignForAdvert);
-				Utils.print("|                  Add a new Advert            |");
+				Utils.print("|                  Add a new Advert              |");
 				Utils.printLineNumber(50);
 				advertUI.addNewAdvertToCampaignUI(selectedClientsForAdvert, selectedCampaignForAdvert);
 				
 				break;
 			case 12:
-
+				Utils.print("|    Staff Type   |");
+				Utils.printLineNumber(19);
+				Utils.print("|1.Creative Staff |");
+				Utils.print("|2.Admin    Staff |");
+				Utils.printLineNumber(50);
+				Utils.print("Selected Staff Type =>",true);
+				int selectStaffType=scan.nextInt();
+				Utils.print("|                  Staff Member List             |");
+				Utils.printLineNumber(50);
+				staffMemberUI.startInterfaceUI(selectStaffType);
+				Utils.printLineNumber(50);
+				staffMemberUI.addNewMemberofStaffUI(selectStaffType);
+				Utils.printLineNumber(50);
+				staffMemberUI.startInterfaceUI(selectStaffType);
 				break;
 			case 0:
 				System.exit(0);
