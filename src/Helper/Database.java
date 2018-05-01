@@ -17,24 +17,24 @@ public class Database {
 
 	
 	public static void fakeData() {
-		clientBoyner =new Client(1,"Appcent","AcÄ±badem","appcent@appcent.mobi","Arda Altunyay","arda.altunyay@appcent.mobi");
-		Campaign campaignAppcent=new Campaign(1,1,"Appcent Mobile Advert","12/04/2016","12/05/2016",345.5);
+		clientBoyner =new Client(1,"Boyner","Acibadem","boyner@gmail.com","Ali Bahtiyar","alibahtiyar");
+		Campaign campaignAppcent=new Campaign(1,1,"3.Year Campaign","12/04/2018","12/05/2016",345.5);
 		clientBoyner.addNewCampaigns(campaignAppcent);
-		Campaign campaignAppcentIOS=new Campaign(2,1,"Appcent Mobile IOS","13/06/2018","17/08/2018",360.5);
+		Campaign campaignAppcentIOS=new Campaign(2,1,"Butterfly Campaign","10/02/2018","25/03/2018",560.5);
 		clientBoyner.addNewCampaigns(campaignAppcentIOS);
 		dataClient.add(clientBoyner);
 		
-		clientBeymen=new Client(2,"Vizyoneks","Ataşehir","vizyoneks@gmail.com","Hasan Arınç","hasanarinc@gmail.com");
-		Campaign campaignVizyoneks10=new Campaign(1,2,"Vizyoneks 10. YIL JAVA","12/04/2016","12/05/2016",345.5);
+		clientBeymen=new Client(2,"Beymen","Ata�ehir","beymen@gmail.com","Arzu Sancak","arzu.sancak@gmail.com");
+		Campaign campaignVizyoneks10=new Campaign(1,2,"Beymen Woman Days","20/04/2016","30/04/2018",55.5);
 		clientBeymen.addNewCampaigns(campaignVizyoneks10);
-		Campaign campaignVizyoneks20=new Campaign(2,2,"Vizyoneks 20. YIL JAVA","13/06/2018","17/08/2018",360.5);
+		Campaign campaignVizyoneks20=new Campaign(2,2,"Beymen Man Days","1/05/2018","15/05/2018",60.5);
 		clientBeymen.addNewCampaigns(campaignVizyoneks20);
 		dataClient.add(clientBeymen);
 		
-		dataClient.add(new Client(3,"HasKaPP","KadÄ±kÃ¶y","haskapp@gmail.com","Kaan KÃ¼n","kaanforum4@gmail.com"));
-		dataClient.add(new Client(4,"Å�imÅŸek Holding","Levent","simsekholding@gmail.com","AslÄ± Å�imÅŸek","aslisimsek@gmail.com"));
-		dataClient.add(new Client(5,"DOIS","BaÄŸcÄ±lar","dois@gmail.com","DoÄŸacan Oymak","dogacanoymak@gmail.com"));
-		dataClient.add(new Client(6,"Jele","KadÄ±kÃ¶y","jele@gmail.com","Hakan Abi","hakanabi@gmail.com"));
+		dataClient.add(new Client(3,"Zara","Kadik�y","zara@gmail.com","Cemil Elit","elitcemil@gmail.com"));
+		dataClient.add(new Client(4,"Bershka","Levent","bershka@gmail.com","Nazim Isik","nazim.isik@gmail.com"));
+		dataClient.add(new Client(5,"Armani Jeans","Mecidiyek�y","armani@gmail.com","Nuray Altin","altin.nuray@gmail.com"));
+		dataClient.add(new Client(6,"Gant","Be�ikta�","gant@gmail.com","G�khan Y�ld�r�m","gokhanyildirim@gmail.com"));
 		
 
 	}
@@ -46,10 +46,10 @@ public class Database {
 	}
 
 	public static void fakeDataStaff() {
-		CreativeStaff cs=new CreativeStaff(1,"Kaan Kün","12/06/2018","kaan.kun@agate.com");
-		CreativeStaff cs1=new CreativeStaff(1,"Kaan","12/06/2018","kaan.kun@agate.com");
-		CreativeStaff cs2=new CreativeStaff(1,"Hasan","12/06/2018","kaan.kun@agate.com");
-		AdminStaff 	  as3=new AdminStaff(1,"HOSOOSO","12/06/2018","kaan.kun@agate.com");
+		CreativeStaff cs=new CreativeStaff(21,"Kaan Kun","12/06/2018","kaan.kun@agate.com");
+		CreativeStaff cs1=new CreativeStaff(23,"Necip Kaldirim","12/06/2018","necip.k@agate.com");
+		CreativeStaff cs2=new CreativeStaff(35,"Mehmet Cansin","12/06/2018","m.cansin@agate.com");
+		AdminStaff 	  as3=new AdminStaff(10,"Hasan Arinc","12/06/2018","hasan.arinc@agate.com");
 		
 		dataStaff.add(cs);
 		dataStaff.add(cs1);

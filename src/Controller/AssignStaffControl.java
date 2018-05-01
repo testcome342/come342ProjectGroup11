@@ -49,6 +49,9 @@ public class AssignStaffControl {
 				campaign.assignStaffToCampaign(selectedClients, selectCampaign,staffMember,staffTypeNameAccountManager);
 				
 				break;
+			default:
+				Utils.print("Please enter a Valid Staff Type");
+				break;
 		}
 	}
 	public void getCampaignControl(int selectedClients) {

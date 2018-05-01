@@ -43,19 +43,18 @@ public class AdminStaff extends StaffMember {
 		Scanner scan=new Scanner(System.in);
 		Utils.print("Admin Staff Number..:",true);
 		aStaffNumber=scan.nextInt();
-		setaStaffNumber(aStaffNumber);
 		staffNo=aStaffNumber;
+		
 		Utils.print("Admin Staff Name..:",true);
 		aStaffName=scan.next();
-		setaStaffName(aStaffName);
 		staffName=aStaffName;
+		
 		Utils.print("Admin Staff Start Date..:",true);
 		aStaffStartDate=scan.next();
-		setaStaffStartDate(aStaffStartDate);
 		staffStartDate=aStaffStartDate;
+		
 		Utils.print("Admin Staff Email Address..:",true);
 		aStaffEmailAddress=scan.next();
-		setaStaffEmailAddress(aStaffEmailAddress);
 		staffEmailAdress=aStaffEmailAddress;
 
 		StaffMember staff=new AdminStaff(aStaffNumber,aStaffName,aStaffStartDate,aStaffEmailAddress);
@@ -69,19 +68,22 @@ public class AdminStaff extends StaffMember {
 		Utils.print("Admin Staff Number..:",true);
 		aStaffNumber=scan.nextInt();
 		setaStaffNumber(aStaffNumber);
-		
+		staffNo=aStaffNumber;
 		Utils.print("Admin Staff Name..:",true);
 		aStaffName=scan.next();
 		setaStaffName(aStaffName);
+		staffName=aStaffName;
 		
 		Utils.print("Admin Staff Start Date..:",true);
 		aStaffStartDate=scan.next();
 		setaStaffStartDate(aStaffStartDate);
+		staffStartDate=aStaffStartDate;
 		
+	
 		Utils.print("Admin Staff Email Address..:",true);
 		aStaffEmailAddress=scan.next();
 		setaStaffEmailAddress(aStaffEmailAddress);
-		
+		staffEmailAdress=aStaffEmailAddress;
 		StaffMember staff=new AdminStaff(aStaffNumber,aStaffName,aStaffStartDate,aStaffEmailAddress);
 		return staff;
 	}	

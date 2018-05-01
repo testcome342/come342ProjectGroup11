@@ -84,19 +84,18 @@ public class CreativeStaff extends StaffMember {
 		Scanner scan=new Scanner(System.in);
 		Utils.print("Creative Staff Number..:",true);
 		cStaffNumber=scan.nextInt();
-		setcStaffNumber(cStaffNumber);
+		
 		staffNo=cStaffNumber;
 		Utils.print("Creative Staff Name..:",true);
 		cStaffName=scan.next();
-		setcStaffName(cStaffName);
+		
 		staffName=cStaffName;
 		Utils.print("Creative Staff Start Date..:",true);
 		cStaffStartDate=scan.next();
-		setcStaffStartDate(cStaffStartDate);
 		staffStartDate=cStaffStartDate;
+		
 		Utils.print("Creative Staff Email Address..:",true);
 		cStaffEmailAddress=scan.next();
-		setcStaffEmailAddress(cStaffEmailAddress);
 		staffEmailAdress=cStaffEmailAddress;
 		
 		StaffMember staff=new CreativeStaff(cStaffNumber,cStaffName,cStaffStartDate,cStaffEmailAddress);

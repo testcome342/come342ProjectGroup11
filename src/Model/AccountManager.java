@@ -45,22 +45,23 @@ public class AccountManager extends StaffMember {
 	@Override
 	public StaffMember assignStaff(int selectedClients,int selectCampaign) {
 		Scanner scan=new Scanner(System.in);
+		
 		Utils.print("Account Manager Number..:",true);
 		aStaffNumber=scan.nextInt();
-		setaStaffNumber(aStaffNumber);
+		
 		staffNo=aStaffNumber;
+		
 		Utils.print("Account Manager Name..:",true);
-		aStaffName=scan.next();
-		setaStaffName(aStaffName);
+		aStaffName=scan.nextLine();
+		
 		staffName=aStaffName;
+		
 		Utils.print("Account Manager Start Date..:",true);
-		aStaffStartDate=scan.next();
-		setaStaffStartDate(aStaffStartDate);
+		aStaffStartDate=scan.nextLine();
 		staffStartDate=aStaffStartDate;
 
 		Utils.print("Account Manager Email Address..:",true);
-		aStaffEmailAddress=scan.next();
-		setaStaffEmailAddress(aStaffEmailAddress);
+		aStaffEmailAddress=scan.nextLine();
 		staffEmailAdress=aStaffEmailAddress;
 
 		

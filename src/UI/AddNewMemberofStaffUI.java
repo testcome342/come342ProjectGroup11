@@ -7,7 +7,7 @@ import Helper.Database;
 	AddNewMemberofStaffControl staffControl=new AddNewMemberofStaffControl();
 		
 	public void startInterfaceUI(int selectStaffType) {
-		Database.fakeDataStaff();	
+			
 		staffControl.getStaffMemberDetails(selectStaffType);	
 	}
 	public void addNewMemberofStaffUI(int selectStaffType) {

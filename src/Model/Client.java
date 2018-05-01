@@ -160,24 +160,32 @@ public class Client {
 		Utils.printLineNumber(50);
 		Utils.print("Select Campaign Type..:",true);
 		int campaignType=scan.nextInt();
-		if(campaignType==1) {
-			Utils.printLineNumber(50);
-			campaign=new Campaign();
-			client=new Client(Database.dataClient.size()+1,client.getCompanyName(),client.getCompanyAddress(),client.getCompanyName(),client.getContactName(),client.getContactEmail());
-			campaign.createCampaign(client.clientID);
-			campaign=new Campaign(clientCampaign.size()+1,client.clientID,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
-			client.addNewCampaigns(campaign);
-			Database.dataClient.add(client);
-			Utils.printLineNumber(50);
-			client.getClientCampaigns(client.clientID);
-			System.out.println("Saved Successfull");
-		}else if(campaignType==2) {
-			Utils.printLineNumber(50);
-			client.addNewCampaign();
+		switch(campaignType) {
+			case 1:
+				Utils.printLineNumber(50);
+				campaign=new Campaign();
+				client=new Client(Database.dataClient.size()+1,client.getCompanyName(),client.getCompanyAddress(),client.getCompanyName(),client.getContactName(),client.getContactEmail());
+				campaign.createCampaign(client.clientID);
+				campaign=new Campaign(clientCampaign.size()+1,client.clientID,campaign.getTitle(),campaign.campaignStartDate,campaign.campaignFinishDate,campaign.estimatedCost);
+				client.addNewCampaigns(campaign);
+				Database.dataClient.add(client);
+				Utils.printLineNumber(50);
+				client.getClientCampaigns(client.clientID);
+				System.out.println("Saved Successfull");
+				client.clientInformation();
+				break;
+			case 2:
+				Utils.printLineNumber(50);
+				client.addNewCampaign();
+				client.clientInformation();
+				break;
+			default: 
+				Utils.print("Please enter write value...");	
+				break;
 		}
 		
 		
-		client.clientInformation();
+		
 	}
 	public void addNewCampaign() {
 		
