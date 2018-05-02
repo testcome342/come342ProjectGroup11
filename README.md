@@ -27,3 +27,8 @@ Case Requirements:
 12-Add New Member of Staff
 
     Colloboration Diagram Link => https://i.hizliresim.com/1Jzn3B.png
+    
+    
+UML DIAGRAM FULL DESCRIPTION
+
+    =>   https://i.hizliresim.com/OoQdQ0.png
