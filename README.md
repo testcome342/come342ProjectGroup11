@@ -10,7 +10,7 @@ Case Requirements:
 
 1-Add a New Client
 
-    Collaboration Diagram Link => https://i.hizliresim.com/oOBzp9.png
+    Collaboration Diagram Link => <a href="https://i.hizliresim.com/oOBzp9.png"/a>
     
 2-Add a New Campaign
 
