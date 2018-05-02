@@ -1,4 +1,4 @@
-# come342ProjectGroup11
+# Agate LTD.
 
 Group Members:
 
